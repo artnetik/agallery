@@ -1,0 +1,29 @@
+<?php
+
+include_once('agallery.features.inc');
+
+
+function agallery_preprocess_node(&$vars, $hook) {
+  if ($vars['type'] == "gallery") {
+    unset($vars['content']);
+    drupal_add_js(drupal_get_path('module', 'agallery') . '/css/agallery.css');
+    drupal_add_js(drupal_get_path('module', 'agallery') . '/js/jquery.cycle.min.js');
+    drupal_add_js(drupal_get_path('module', 'agallery') . '/js/agallery.js');
+    $vars['content'] = '<div class="gallery-body">' . $vars['node']->content['body']['#value'] . '</div>';
+
+    $vars['content'] .= '<div id="gallery-pages">';
+    $image_chunks = array_chunk($vars['field_images'], 9);
+    foreach($image_chunks as $chunk => $images) {
+      $vars['content'] .= '<div class="gallery-page" ';
+      //$vars['content'] .= $chunk ? 'style="display:none"' : '';
+      $vars['content'] .= '>';
+      foreach ($images as $image) {
+        $vars['content'] .= $image['view'];
+      }
+      $vars['content'] .= '</div>';
+    }
+    $vars['content'] .= '</div>';
+    $vars['content'] .= '<div class="gallery-navigation"><a id="prev" href="#">&laquo; Prejšnja</a><div id="nav"></div>';
+    $vars['content'] .= '<a id="next" href="#">Naslednja &raquo;</a></div>';
+  }
+}

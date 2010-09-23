@@ -1,0 +1,40 @@
+.frontpage-gallery-title {
+  width: 290px;
+  padding: 10px;
+  height: 35px;
+  /*margin-top: -60px;*/
+  background: url('./../images/label_bg.png');
+  position: absolute;
+  color:#FFF;
+  font-weight:bold;
+  font-size:12px;
+  bottom: 3px;
+}
+
+.gallery-page a,
+.field-field-images div.field-item {
+  float: left;
+}
+
+.imagecache-galleryformatter_thumb_linked,
+.field-field-images img {
+  border: 3px solid #ccc;
+}
+
+table.views-view-grid td { padding:0px 10px 10px 10px}
+table.views-view-grid td  div.clear-block { font-size:14px; font-weight:bold; margin-bottom:10px; }
+table.views-view-grid td div a img { border: 3px solid #CCC; }
+table.views-view-grid td div a:active  img{ border: 3px solid #AA0C1E; }
+
+.gallery-page a { display:block; margin:10px; border: 3px solid #CCC;}
+.gallery-page a:hover {  border: 3px solid #AA0C1E;}
+.gallery-page a img { display:block;}
+
+.gallery-navigation { padding-left:10px; padding-top:10px;}
+a#prev { float:left; display:block;   }
+a#prev:hover { text-decoration:underline;}
+div#nav { float:left;  text-align:center; margin:0 10px 0 10px; }
+div#nav  a{ margin:0px 5px 0px 5px; color:#FFF; background:#AA0C1E; width:15px; float:left; }
+div#nav  a:hover, div#nav  a.activeSlide{ background: #333;  }
+a#next { float:left; display:block;  }
+a#next:hover { text-decoration:underline;}
