@@ -23,7 +23,9 @@ function agallery_preprocess_node(&$vars, $hook) {
       $vars['content'] .= '</div>';
     }
     $vars['content'] .= '</div>';
-    $vars['content'] .= '<div class="gallery-navigation"><a id="prev" href="#">&laquo; Prejšnja</a><div id="nav"></div>';
-    $vars['content'] .= '<a id="next" href="#">Naslednja &raquo;</a></div>';
+    if (count($image_chunks) > 1) {
+      $vars['content'] .= '<div class="gallery-navigation"><a id="prev" href="#">&laquo; Prejšnja</a><div id="nav"></div>';
+      $vars['content'] .= '<a id="next" href="#">Naslednja &raquo;</a></div>';
+    }
   }
 }
